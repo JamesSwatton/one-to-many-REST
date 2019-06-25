@@ -8,10 +8,11 @@ import com.codeclan.example.OneToManyREST.repositories.FolderRepository;
 import com.codeclan.example.OneToManyREST.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 @Component
-public class DataLoader {
+public class DataLoader implements ApplicationRunner {
 
     @Autowired
     FileRepository fileRepository;
@@ -42,6 +43,6 @@ public class DataLoader {
 
         File wages2019 = new File("wages2019", "xls", 90, wagesInfo);
         fileRepository.save(wages2019);
-        
+
     }
 }
